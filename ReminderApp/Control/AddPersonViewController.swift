@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddPersonViewController: UIViewController, UITextFieldDelegate {
 
@@ -20,6 +21,9 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var notesField: UITextField!
     
     let datePicker = UIDatePicker()
+    let formatter = DateFormatter()
+    
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +63,7 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func doneDatePicker() {
-        let formatter = DateFormatter()
+        
         formatter.dateFormat = "dd/MM/yyyy"
         birthdayField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
@@ -95,4 +99,31 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        let newPerson = Person()
+        newPerson.firstName = firstName.text ?? ""
+        newPerson.lastName = lastName.text ?? ""
+//        let group = Group()
+//        group.name = groupField.text ?? ""
+//        group.color = "FFFFFF"
+//        newPerson.groups.append(group)
+        // add phone number
+        newPerson.birthday = formatter.date(from: birthdayField.text ?? "01/01/2000")
+        newPerson.notes = notesField.text ?? ""
+
+        savePerson(newPerson)
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func savePerson(_ person: Person) {
+        do {
+            try realm.write {
+                realm.add(person)
+            }
+        }
+        catch {
+            print("Error: cannot save person \(error)")
+        }
+    }
 }

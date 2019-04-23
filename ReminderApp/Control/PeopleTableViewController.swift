@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PeopleTableViewController: UITableViewController {
     
     let fullNames = ["Mehmet Sahin", "Some name", "Some other name"]
     let titles = ["CSC Students", "CIS Prof.", "Advisor"]
-    let imageNames = ["2","1","3"]
+    let imageNames = ["1","2","3", "4", "5", "6"]
+    
+    let realm = try! Realm()
+    
+    var people: Results<Person>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.tableView.register(UINib(nibName: "CustomPersonCell", bundle: nil), forCellReuseIdentifier: "customPersonCell")
-        
         configureTableCells()
+        loadPeope()
     }
     
     func configureTableCells() {
@@ -31,23 +35,39 @@ class PeopleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fullNames.count
+        return people?.count ?? 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customPersonCell", for: indexPath)
         
-        cell.textLabel?.text = fullNames[indexPath.row]
-        cell.detailTextLabel?.text = titles[indexPath.row]
-        
-        let img = UIImage(named: imageNames[indexPath.row])!
-//        cell.imageView?.layer.cornerRadius = 10.0
-//        cell.imageView!.image = img
-        cell.imageView!.maskCircle(anyImage: img)
+        if let person = people?[indexPath.row] {
+            cell.textLabel?.text = "\(String(describing: person.firstName)) \(String(describing: person.lastName))"
+            cell.detailTextLabel?.text = person.title ?? ""
+            
+            let img = UIImage(named: imageNames[indexPath.row])!
+            //        cell.imageView?.layer.cornerRadius = 10.0
+            //        cell.imageView!.image = img
+            cell.imageView!.maskCircle(anyImage: img)
+        } else {
+            cell.textLabel?.text = "No People yet"
+        }
 
         return cell
     }
+    
+    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        tableView.reloadData()
+    }
+    
+    
+    func loadPeope() {
+        people = realm.objects(Person.self)
+        
+        self.tableView.reloadData()
+    }
+    
 }
 
 extension UIImageView {

@@ -70,6 +70,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="People" id="ucg-Um-fcS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="kdv-i8-mPC">
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="OqI-Xq-0dV" id="dIj-EJ-gJM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SmY-lm-4vh">
                             <connections>
                                 <segue destination="tUE-0l-Nbm" kind="show" id="xs0-0Y-bbn"/>
@@ -195,7 +200,11 @@
                         <viewLayoutGuide key="safeArea" id="fsm-rQ-fwO"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Person" largeTitleDisplayMode="never" id="wRI-fJ-NKm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jDJ-bd-S97"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jDJ-bd-S97">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="tUE-0l-Nbm" id="c1d-lW-Mbd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="birthdayField" destination="336-PG-0Cn" id="EVK-aG-HJN"/>
