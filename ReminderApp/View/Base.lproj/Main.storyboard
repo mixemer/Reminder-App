@@ -122,7 +122,7 @@
                                             <outlet property="delegate" destination="tUE-0l-Nbm" id="0kn-Bf-nhv"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-vo-bEk" userLabel="Title">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-vo-bEk" userLabel="Title">
                                         <rect key="frame" x="0.0" y="240" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ptr-RV-3hn"/>
@@ -201,11 +201,11 @@
                         <outlet property="birthdayField" destination="336-PG-0Cn" id="EVK-aG-HJN"/>
                         <outlet property="emailField" destination="PFa-5m-iV1" id="MDs-45-b3R"/>
                         <outlet property="firstName" destination="Wym-mR-r94" id="SgC-G5-Nol"/>
+                        <outlet property="groupField" destination="dXb-vo-bEk" id="hvn-AW-YPH"/>
                         <outlet property="imgView" destination="STP-Zy-dbv" id="Mdl-hC-C0P"/>
                         <outlet property="lastName" destination="YQ8-px-EIB" id="FwU-9Z-CPS"/>
                         <outlet property="notesField" destination="GMc-Lt-k7O" id="dau-KW-16N"/>
                         <outlet property="phoneNum" destination="YPQ-mN-FKr" id="OtN-10-dcQ"/>
-                        <outlet property="titleField" destination="dXb-vo-bEk" id="hvn-AW-YPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaJ-vk-cMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
