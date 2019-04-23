@@ -70,12 +70,147 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="People" id="ucg-Um-fcS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SmY-lm-4vh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SmY-lm-4vh">
+                            <connections>
+                                <segue destination="tUE-0l-Nbm" kind="show" id="xs0-0Y-bbn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2f-bW-Ux7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="286"/>
+            <point key="canvasLocation" x="1629" y="285"/>
+        </scene>
+        <!--Add New Person-->
+        <scene sceneID="iEo-LB-SE8">
+            <objects>
+                <viewController id="tUE-0l-Nbm" customClass="AddPersonViewController" customModule="ReminderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lNK-PT-BzG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k8N-3P-KC8">
+                                <rect key="frame" x="20" y="69" width="374" height="628"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="STP-Zy-dbv">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="h2Z-Sj-T7m"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wym-mR-r94" userLabel="First Name">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Zzv-Av-bCJ"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="tUE-0l-Nbm" id="EmT-az-FVi"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-px-EIB" userLabel="Last Name">
+                                        <rect key="frame" x="0.0" y="190" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="oLQ-pk-eAc"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="tUE-0l-Nbm" id="0kn-Bf-nhv"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-vo-bEk" userLabel="Title">
+                                        <rect key="frame" x="0.0" y="240" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ptr-RV-3hn"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="tUE-0l-Nbm" id="u23-fl-fE4"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPQ-mN-FKr" userLabel="Phone Number">
+                                        <rect key="frame" x="0.0" y="290" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="eiO-kB-15j"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="tUE-0l-Nbm" id="CE0-Qi-ZTA"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFa-5m-iV1" userLabel="Email">
+                                        <rect key="frame" x="0.0" y="340" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="zN1-9t-Stw"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="tUE-0l-Nbm" id="t8P-oB-ckB"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="336-PG-0Cn" userLabel="Birthday">
+                                        <rect key="frame" x="0.0" y="390" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="q02-J4-9Fa"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="tUE-0l-Nbm" id="LRx-uw-WnB"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Notes:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GMc-Lt-k7O" userLabel="Notes:">
+                                        <rect key="frame" x="0.0" y="440" width="374" height="188"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="188" id="yBR-9J-OTq"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="tUE-0l-Nbm" id="6Lo-TT-704"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="k8N-3P-KC8" secondAttribute="trailing" constant="20" id="QBQ-IX-95D"/>
+                            <constraint firstItem="k8N-3P-KC8" firstAttribute="top" secondItem="fsm-rQ-fwO" secondAttribute="top" constant="5" id="Rvt-Qh-t9g"/>
+                            <constraint firstItem="k8N-3P-KC8" firstAttribute="leading" secondItem="fsm-rQ-fwO" secondAttribute="leading" constant="20" id="hPh-pO-q9L"/>
+                            <constraint firstItem="k8N-3P-KC8" firstAttribute="bottom" secondItem="fsm-rQ-fwO" secondAttribute="bottom" constant="10" id="rIY-pr-WVu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fsm-rQ-fwO"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Person" largeTitleDisplayMode="never" id="wRI-fJ-NKm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jDJ-bd-S97"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="birthdayField" destination="336-PG-0Cn" id="EVK-aG-HJN"/>
+                        <outlet property="emailField" destination="PFa-5m-iV1" id="MDs-45-b3R"/>
+                        <outlet property="firstName" destination="Wym-mR-r94" id="SgC-G5-Nol"/>
+                        <outlet property="imgView" destination="STP-Zy-dbv" id="Mdl-hC-C0P"/>
+                        <outlet property="lastName" destination="YQ8-px-EIB" id="FwU-9Z-CPS"/>
+                        <outlet property="notesField" destination="GMc-Lt-k7O" id="dau-KW-16N"/>
+                        <outlet property="phoneNum" destination="YPQ-mN-FKr" id="OtN-10-dcQ"/>
+                        <outlet property="titleField" destination="dXb-vo-bEk" id="hvn-AW-YPH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KaJ-vk-cMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2361" y="285"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="NeU-Pt-QlU">
@@ -93,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFg-ci-9nI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="982"/>
+            <point key="canvasLocation" x="1629" y="982"/>
         </scene>
         <!--Reminder-->
         <scene sceneID="3Ax-1d-Zg4">
@@ -243,6 +378,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="133.33332824707031" height="133.33332824707031"/>
         <image name="alarm" width="33.333332061767578" height="33.333332061767578"/>
         <image name="alarm-filled" width="33.333332061767578" height="33.333332061767578"/>
         <image name="planner" width="33.333332061767578" height="33.333332061767578"/>
