@@ -21,6 +21,7 @@
 		46B6418C226F4FF5008C2BDF /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6418B226F4FF5008C2BDF /* SwipeTableViewController.swift */; };
 		46B6418E226F60DB008C2BDF /* ReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6418D226F60DB008C2BDF /* ReminderTableViewController.swift */; };
 		46B64190226FAE8A008C2BDF /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6418F226FAE8A008C2BDF /* AddPersonViewController.swift */; };
+		46B64192226FD16F008C2BDF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B64191226FD16F008C2BDF /* ProfileViewController.swift */; };
 		713565E7FCCAB1D268DF172F /* Pods_ReminderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61100F830BF6F3480871B95 /* Pods_ReminderApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		46B6418B226F4FF5008C2BDF /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		46B6418D226F60DB008C2BDF /* ReminderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewController.swift; sourceTree = "<group>"; };
 		46B6418F226FAE8A008C2BDF /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
+		46B64191226FD16F008C2BDF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6C09A0684C2B22B1FCF7DD5B /* Pods-ReminderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReminderApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReminderApp/Pods-ReminderApp.release.xcconfig"; sourceTree = "<group>"; };
 		ABC6BDC0476EF62F4DEF55DC /* Pods-ReminderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReminderApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReminderApp/Pods-ReminderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C61100F830BF6F3480871B95 /* Pods_ReminderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReminderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				46B6418D226F60DB008C2BDF /* ReminderTableViewController.swift */,
 				46125A42226E54540048BEE0 /* PeopleTableViewController.swift */,
 				46B6418F226FAE8A008C2BDF /* AddPersonViewController.swift */,
+				46B64191226FD16F008C2BDF /* ProfileViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				46B64186226F4A84008C2BDF /* GroupsTableViewController.swift in Sources */,
 				466AD9C8226E088800C9EE48 /* Person.swift in Sources */,
 				46B6418E226F60DB008C2BDF /* ReminderTableViewController.swift in Sources */,
+				46B64192226FD16F008C2BDF /* ProfileViewController.swift in Sources */,
 				46B64188226F4E4D008C2BDF /* Group.swift in Sources */,
 				46125A43226E54540048BEE0 /* PeopleTableViewController.swift in Sources */,
 				464A72D522656A7800B3FD28 /* AppDelegate.swift in Sources */,
