@@ -13,6 +13,6 @@ class Reminder: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var isDone: Bool = false
     @objc dynamic var dateCreated: Date?
-    @objc dynamic var forPerson: Person?
+//    @objc dynamic var forPerson: Person?
     var parentGroup = LinkingObjects(fromType: Group.self, property: "reminders")
 }

@@ -34,7 +34,7 @@ class ReminderTableViewController: SwipeTableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        updateNavBar(withHexCode: "1D9BF6")
+        updateNavBar(withHexCode: "FFFFFF")
     }
     
     func updateNavBar(withHexCode colorHexCode: String) {
@@ -99,6 +99,51 @@ class ReminderTableViewController: SwipeTableViewController {
         
         var textField = UITextField()
         
+        let alert = UIAlertController(title: "Add Reminder", message: "", preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Add", style: .default) {
+            (action) in
+            
+            if let currentGroup = self.selectedGroup {
+                do {
+                    try self.realm.write {
+                        let newReminder = Reminder()
+                        newReminder.title = textField.text!
+                        newReminder.dateCreated = Date()
+                        currentGroup.reminders.append(newReminder)
+                    }
+                }
+                catch {
+                    print("Error saving reminder \(error)")
+                }
+            }
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField {
+            (alertTextField) in
+            alertTextField.placeholder = "Create a new reminder"
+            textField = alertTextField
+        }
+        
+        alert.addAction(alertAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+    
+    // MARK: Delete data with Swipe
+    override func updateModel(at indexPath: IndexPath) {
+        if let reminderForDeletion = self.reminders?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(reminderForDeletion)
+                }
+            }
+            catch {
+                print("Error in deleting the cell \(error)")
+            }
+        }
     }
     
     func loadReminders() {

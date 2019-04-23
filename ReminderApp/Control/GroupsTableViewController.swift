@@ -55,7 +55,11 @@ class GroupsTableViewController: SwipeTableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinVC = segue.destination as! ReminderTableViewController
         
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinVC.selectedGroup = groups?[indexPath.row]
+        }
     }
     
     // MARK: - Data manipulation methods
@@ -81,6 +85,7 @@ class GroupsTableViewController: SwipeTableViewController {
         }
         
         alert.addAction(alertAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(alert,animated: true)
     }
     

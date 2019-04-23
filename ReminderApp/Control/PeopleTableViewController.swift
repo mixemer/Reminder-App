@@ -12,7 +12,7 @@ class PeopleTableViewController: UITableViewController {
     
     let fullNames = ["Mehmet Sahin", "Some name", "Some other name"]
     let titles = ["CSC Students", "CIS Prof.", "Advisor"]
-    let imageNames = ["1","2","3"]
+    let imageNames = ["2","1","3"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
