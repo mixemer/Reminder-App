@@ -5,10 +5,10 @@ Help Professors/bosses to get to know and remember their students/employees info
 
 Welcome Page                 |2                               | 3
 :---------------------------:|:------------------------------:|:------------------------------:
-![](images/1.PNG)             |  ![](images/2.PNG)           | ![](images/3.PNG)
+![](images/1.png)             |  ![](images/2.png)           | ![](images/3.png)
 
 
 
 1                            |  2                             | 3
 :---------------------------:|:------------------------------:|:------------------------------:
-![](images/4.PNG)            |  ![](images/Earth.PNG)         | ![](images/Heart.PNG)
+![](images/4.png)            |  ![](images/5.png)         | ![](images/1.png)
