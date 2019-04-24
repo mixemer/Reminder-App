@@ -8,8 +8,10 @@
 - RealmSwift: to persist data for a better user-experience
 - ChameleonFramework: to color table view cells in a beautiful way
 
-Help Professors/bosses to get to know and remember their students/employees informations so that they can make closer connections.
+### What it does?
+Helps Professors/bosses to get to know and remember their students/employees informations so that they can make closer connections.
 
+### Demo
 Welcome Page                 |2                               | 3
 :---------------------------:|:------------------------------:|:------------------------------:
 ![](images/1.png)             |  ![](images/2.png)           | ![](images/3.png)
