@@ -120,4 +120,9 @@ class GroupsTableViewController: SwipeTableViewController {
             }
         }
     }
+    
+    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        tableView.reloadData()
+    }
+    
 }

@@ -442,6 +442,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Groups" id="5pQ-kz-WuW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="jn8-RJ-fFt">
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="vJ0-Xp-q26" id="Few-qD-5qC"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lYv-4m-3bj">
                             <connections>
                                 <action selector="addButtonPressed:" destination="vJ0-Xp-q26" id="s66-TH-JQ4"/>
