@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
 class AddPersonViewController: UIViewController, UITextFieldDelegate {
 
@@ -64,7 +65,7 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
     
     @objc func doneDatePicker() {
         
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "MM/dd/yyyy"
         birthdayField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
@@ -101,14 +102,44 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         let newPerson = Person()
-        newPerson.firstName = firstName.text ?? ""
-        newPerson.lastName = lastName.text ?? ""
-//        let group = Group()
-//        group.name = groupField.text ?? ""
-//        group.color = "FFFFFF"
-//        newPerson.groups.append(group)
+        let fName = firstName.text ?? ""
+        let lName = lastName.text ?? ""
+        newPerson.firstName = fName
+        newPerson.lastName = lName
+        let bday = formatter.date(from: birthdayField.text ?? "01/01/2000")
+        newPerson.birthday = bday
+        
+        let groupName = groupField.text ?? "General"
+        newPerson.title = groupName
+        let newReminder = Reminder()
+        newReminder.title = "\(fName) \(lName)'s Birthday"
+        newReminder.dateCreated = bday
+        if let a = realm.objects(Group.self).filter("name = '\(groupName)'").first {
+            do {
+                try realm.write {
+                    a.reminders.append(newReminder)
+                }
+            }
+            catch {
+                print("Error: cannot save reminder \(error)")
+            }
+        } else {
+            do {
+                try realm.write {
+                    let newGroup = Group()
+                    newGroup.name = groupName
+                    newGroup.color = UIColor.randomFlat.hexValue()
+                    realm.add(newGroup)
+                    newGroup.reminders.append(newReminder)
+                }
+            }
+            catch {
+                print("Error: cannot save group \(error)")
+            }
+        }
+        
         // add phone number
-        newPerson.birthday = formatter.date(from: birthdayField.text ?? "01/01/2000")
+        newPerson.emailAdress = emailField.text ?? ""
         newPerson.notes = notesField.text ?? ""
 
         savePerson(newPerson)

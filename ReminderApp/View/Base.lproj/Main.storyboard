@@ -236,26 +236,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="160"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sU3-cL-3cJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="160"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="160"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="abj-nI-auM">
+                                                        <rect key="frame" x="102" y="0.0" width="160" height="160"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="160" id="RTA-Kd-eKD"/>
+                                                            <constraint firstAttribute="width" constant="160" id="mlI-EZ-tU1"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="82" id="aZJ-AT-DcE"/>
-                                                    <constraint firstAttribute="height" constant="160" id="x0J-fq-BFu"/>
-                                                </constraints>
-                                            </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="abj-nI-auM">
-                                                <rect key="frame" x="82" y="0.0" width="200" height="160"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="bKX-KH-aH0"/>
-                                                    <constraint firstAttribute="width" constant="200" id="gYM-fv-glh"/>
-                                                </constraints>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zw-7N-FQr">
-                                                <rect key="frame" x="282" y="0.0" width="82" height="160"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="9dc-0P-rd1"/>
-                                                    <constraint firstAttribute="width" constant="82" id="s0K-2A-30A"/>
+                                                    <constraint firstAttribute="height" constant="160" id="GQq-q0-4sR"/>
+                                                    <constraint firstItem="abj-nI-auM" firstAttribute="centerY" secondItem="sU3-cL-3cJ" secondAttribute="centerY" id="czq-Bm-Ya0"/>
+                                                    <constraint firstItem="abj-nI-auM" firstAttribute="centerX" secondItem="sU3-cL-3cJ" secondAttribute="centerX" id="zAb-5Q-Q3d"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

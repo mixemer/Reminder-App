@@ -31,14 +31,13 @@ class ProfileViewController: UIViewController {
     
     
     func loadInfo() {
+        formatter.dateFormat = "MM/dd/yyyy"
         if let p = person {
             imgView.maskCircle(anyImage: UIImage(named: imgNum!)!)
             fullNameLabel.text = "\(p.firstName) \(p.lastName)"
             groupLabel.text = p.title ?? ""
             birthdayLabel.text = "Birthday: \(formatter.string(from: p.birthday ?? formatter.date(from: "01/01/2000")!))"
             emailLabel.text = "Email: \(p.emailAdress ?? "")"
-            
-            
         }
     }
     
