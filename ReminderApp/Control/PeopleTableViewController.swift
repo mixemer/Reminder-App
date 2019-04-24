@@ -62,12 +62,14 @@ class PeopleTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destinVC = segue.destination as! ProfileViewController
-//
-//        if let indexPath = tableView.indexPathForSelectedRow {
-//            destinVC.person = people?[indexPath.row]
-//            destinVC.imgNum = imageNames[indexPath.row]
-//        }
+        if segue.identifier == "GoToPerson" {
+            let destinVC = segue.destination as! ProfileViewController
+
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destinVC.person = people?[indexPath.row]
+                destinVC.imgNum = imageNames[indexPath.row]
+            }
+        }
     }
     
     @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {

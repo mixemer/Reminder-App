@@ -32,11 +32,13 @@ class ProfileViewController: UIViewController {
     
     func loadInfo() {
         if let p = person {
-            imgView.image = UIImage(named: imgNum!)
+            imgView.maskCircle(anyImage: UIImage(named: imgNum!)!)
             fullNameLabel.text = "\(p.firstName) \(p.lastName)"
             groupLabel.text = p.title ?? ""
-            birthdayLabel.text = formatter.string(from: p.birthday ?? formatter.date(from: "01/01/2000")!)
-            emailLabel.text = p.emailAdress ?? ""
+            birthdayLabel.text = "Birthday: \(formatter.string(from: p.birthday ?? formatter.date(from: "01/01/2000")!))"
+            emailLabel.text = "Email: \(p.emailAdress ?? "")"
+            
+            
         }
     }
     
@@ -51,7 +53,7 @@ class ProfileViewController: UIViewController {
                 print("Error: cannot delete person \(error)")
             }
         }
-        
+        navigationController?.popViewController(animated: true)
     }
     
 }
